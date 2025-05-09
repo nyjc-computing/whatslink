@@ -96,3 +96,25 @@ function generate() {
         addLink(makeLink(input));
     }
 }
+
+function adjustResultsHeight() {
+    const topSection = document.getElementById('topSection');
+    const resultsContainer = document.getElementById('resultsContainer');
+  
+    const topHeight = topSection.getBoundingClientRect().height;
+    const viewportHeight = window.innerHeight;
+  
+    const availableHeight = viewportHeight - topHeight - 20; // Add bottom margin
+    console.log(availableHeight)
+    resultsContainer.style.maxHeight = `${availableHeight}px`;
+    resultsContainer.style.overflowY = 'auto';
+  }
+  
+  // Run on initial load and on window resize
+  document.getElementById('generateBtn').addEventListener('click', () => {
+    adjustResultsHeight();
+  });
+  
+  window.addEventListener('resize', adjustResultsHeight);
+  
+  

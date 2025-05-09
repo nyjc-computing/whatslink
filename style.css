@@ -30,6 +30,14 @@ label {
     margin-top: 0.4em;
 }
 
+#wa_links {
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #f7f7f7;
+}
+
 .form-signin {
   /* display: block; */
   width: 100%;
@@ -50,3 +58,4 @@ label {
 .form-signin .form-control:focus {
   z-index: 2;
 }
+

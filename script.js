@@ -104,12 +104,12 @@ function adjustResultsHeight() {
     const topHeight = topSection.getBoundingClientRect().height;
     const viewportHeight = window.innerHeight;
   
-    const availableHeight = viewportHeight - topHeight - 20; // Add bottom margin
+    const availableHeight = viewportHeight - topHeight - 20; // find available fixed height for whatsapp links container (total - top section - 20px bottom margin)
     resultsContainer.style.maxHeight = `${availableHeight}px`;
     resultsContainer.style.overflowY = 'auto';
   }
   
-  // Run on initial load and on window resize
+  // run again on window resize
   document.getElementById('generateBtn').addEventListener('click', () => {
     adjustResultsHeight();
   });

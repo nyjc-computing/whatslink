@@ -105,7 +105,6 @@ function adjustResultsHeight() {
     const viewportHeight = window.innerHeight;
   
     const availableHeight = viewportHeight - topHeight - 20; // Add bottom margin
-    console.log(availableHeight)
     resultsContainer.style.maxHeight = `${availableHeight}px`;
     resultsContainer.style.overflowY = 'auto';
   }

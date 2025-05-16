@@ -19,33 +19,37 @@
 
   <body class="container-fluid justify-content-center">
     <div class="container-fluid justify-content-center">
-        <div class="row justify-content-center"><h1 class="row">WhatsLink</h1></div>
-        <div class="row justify-content-center"><img class="row mb-4" src="static/WhatsApp_Logo_1.png" alt="" width="144" height="120"></div>
-        <div class="row justify-content-center"><h3 class="mb-3 font-weight-normal">Who do you want to message?</h3></div>
-        <div class="row justify-content-center">
-            <div id="wa_entry" class="col-md-6 justify-content-center">
-                <div class="row">
-                    <label class="h6 mt-3" for="wa_number">WhatsApp Number</label>
-                    <!-- <input type="text" id="wa_number" class="form-control" placeholder="WhatsApp number" required autofocus> -->
-                    <textarea form="whatslink" id="wa_number" name="wa_number" class="form-control" placeholder="WhatsApp number(s), each on a new line" autofocus></textarea>
-                    <label class="h6 mt-3" for="message">Your Message</label>
-                    <!-- <input type="text" id="message" class="form-control" placeholder="Your message here" required> -->
-                    <textarea form="whatslink" id="message" name="message" class="form-control" placeholder="Your message here"></textarea>
+        <div id="topSection">
+            <div class="row justify-content-center"><h1 class="row">WhatsLink</h1></div>
+            <div class="row justify-content-center"><img class="row mb-4" src="static/WhatsApp_Logo_1.png" alt="" width="144" height="120"></div>
+            <div class="row justify-content-center"><h3 class="mb-3 font-weight-normal">Who do you want to message?</h3></div>
+            <div class="row justify-content-center">
+                <div id="wa_entry" class="col-md-6 justify-content-center">
+                    <div class="row">
+                        <label class="h6 mt-3" for="wa_number">WhatsApp Number</label>
+                        <!-- <input type="text" id="wa_number" class="form-control" placeholder="WhatsApp number" required autofocus> -->
+                        <textarea form="whatslink" id="wa_number" name="wa_number" class="form-control" placeholder="WhatsApp number(s), each on a new line" autofocus></textarea>
+                        <label class="h6 mt-3" for="message">Your Message</label>
+                        <!-- <input type="text" id="message" class="form-control" placeholder="Your message here" required> -->
+                        <textarea form="whatslink" id="message" name="message" class="form-control" placeholder="Your message here"></textarea>
+                    </div>
+                    <div class="row-md-2 mt-2">
+                        <input type="radio" id="wame" name="linkType" value="wame" checked />
+                        <label for="wame">Generate wa.me link</label>
+                        <br />
+                        <input type="radio" id="web" name="linkType" value="web" />
+                        <label for="web">Generate WhatsApp Web link</label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" id="generateBtn" onclick="generate();">Generate link</button>
                 </div>
-                <div class="row-md-2 mt-2">
-                    <input type="radio" id="wame" name="linkType" value="wame" checked />
-                    <label for="wame">Generate wa.me link</label>
-                    <br />
-                    <input type="radio" id="web" name="linkType" value="web" />
-                    <label for="web">Generate WhatsApp Web link</label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" onclick="generate();">Generate link</button>
             </div>
         </div>
+        
         <div class="row mt-3 justify-content-center">
             <h3 class="mb-3">Your links:</h3>
         </div>
-        <div class="row mt-3 justify-content-center">
+        
+        <div id="resultsContainer" class="row mt-3 justify-content-center">
             <div id="wa_links" class="form-signin"></div>
         </div>
         <footer class="container-fluid justify-content-center">

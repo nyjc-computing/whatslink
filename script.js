@@ -96,3 +96,24 @@ function generate() {
         addLink(makeLink(input));
     }
 }
+
+function adjustResultsHeight() {
+    const topSection = document.getElementById('topSection');
+    const resultsContainer = document.getElementById('resultsContainer');
+  
+    const topHeight = topSection.getBoundingClientRect().height;
+    const viewportHeight = window.innerHeight;
+  
+    const availableHeight = viewportHeight - topHeight - 20; // find available fixed height for whatsapp links container (total - top section - 20px bottom margin)
+    resultsContainer.style.maxHeight = `${availableHeight}px`;
+    resultsContainer.style.overflowY = 'auto';
+  }
+  
+  // run again on window resize
+  document.getElementById('generateBtn').addEventListener('click', () => {
+    adjustResultsHeight();
+  });
+  
+  window.addEventListener('resize', adjustResultsHeight);
+  
+  
